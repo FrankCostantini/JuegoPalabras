@@ -12,13 +12,18 @@ def lectura(archivo, salida):
 
 def nuevaPalabra(lista):
     azar = random.randint(0,len(lista))
-    return lista[azar]
+
+    print(lista[azar])
+
 
 def silabasTOpalabra(silaba):
-    SinEspacio = silaba
-    SinEspacio.remove("")
-    SinEspacio.remove("-")
-    return SinEspacio
+    ind="- "
+    var=""
+    for i in range(len(silaba)):
+        if silaba[i] not in ind:
+            var= var + silaba[i]
+
+    return var
 
 def palabraTosilaba(palabra):
     a = pyphen.Pyphen(lang='es')
@@ -37,3 +42,4 @@ def puntaje(palabraEnSilabas,palabra):
     else:
         return -5
 
+print(silabasTOpalabra("pe pe ju-chu"))

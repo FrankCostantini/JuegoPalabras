@@ -9,8 +9,10 @@ from funcionesSeparador import *
 
 from funcionesVACIAS import *
 
+
 #Funcion principal
 def main():
+
         #Centrar la ventana y despues inicializar pygame
         os.environ["SDL_VIDEO_CENTERED"] = "1"
         pygame.init()
@@ -83,7 +85,7 @@ def main():
             #Limpiar pantalla anterior
             screen.fill(COLOR_FONDO)
 
-            #Dibujar de nuevo todo
+            #Dibujar de nuevo
             dibujar(screen, palabra, palabraEnPantalla, puntos,segundos)
 
             pygame.display.flip()
@@ -99,3 +101,4 @@ def main():
 #Programa Principal ejecuta Main
 if __name__ == "__main__":
     main()
+    puntaje()
