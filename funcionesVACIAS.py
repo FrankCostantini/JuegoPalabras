@@ -6,14 +6,30 @@ import math
 
 LONG_MIN=4
 
-def lectura(archivo, salida):
-    salida.append(archivo)
+def dlenter(linea):
+    linea2=""
+    for i in range(len(linea)-1):
+        linea2 += linea[i]
+    return linea2
 
+
+
+def lectura(archivo, salida):
+    for linea in archivo:
+        línea = archivo.readline()
+        linea2 = dlenter(linea)
+        salida.append(linea2)
 
 def nuevaPalabra(lista):
-    azar = random.randint(0,len(lista))
-
-    print(lista[azar])
+    relleno = []
+    var = ""
+    azar = random.randint(0, len(lista))
+    if lista[azar] not in relleno:
+        var = lista[azar]
+        relleno.append(lista[azar])
+    else:
+        azar = random.randint(0, len(lista))
+    return var
 
 
 def silabasTOpalabra(silaba):
@@ -25,13 +41,39 @@ def silabasTOpalabra(silaba):
 
     return var
 
-def palabraTosilaba(palabra):
+def palabraTOsilaba(palabra):
     a = pyphen.Pyphen(lang='es')
-    return a.inserted(palabra)
+    var= a.inserted(palabra)
+    return var
+#pe pe or pe-pe / true
+#pe-pe / donde hay un guion ponemos espacio /
+#palabra / pa-la-bra
+
+def cambioEspacio(palabra):
+    pal = ""
+    for i in range(len(palabra)):
+        if palabra[i] != "-":
+            pal += palabra[i]
+        elif palabra[i] == "-":
+            pal += " "
+    return pal
 
 
-def esCorrecta(palabraEnSilabasEnPantalla, palabra):
-    if silabasTOpalabra(palabraEnSilabasEnPantalla) == silabasTOpalabra(palabra) and len(palabra) > LONG_MIN:
+def cambioguion(palabra):
+    pal = ""
+    for i in range(len(palabra)):
+        if palabra[i] != " ":
+            pal += palabra[i]
+        elif palabra[i] == " ":
+            pal += "-"
+    return pal
+
+
+
+def esCorrecta(palabraEnSilabasEnPantalla,palabra):
+    palabraGuion=palabraEnSilabasEnPantalla
+    palabraEspacio=cambioEspacio(palabraEnSilabasEnPantalla)
+    if palabra ==palabraGuion or palabra==palabraEspacio and len(palabra) > LONG_MIN:
         return True
     else:
         return False
@@ -39,7 +81,6 @@ def esCorrecta(palabraEnSilabasEnPantalla, palabra):
 def puntaje(palabraEnSilabas,palabra):
     if esCorrecta(palabraEnSilabas,palabra):
       return 5
-    else:
-        return -5
 
-print(silabasTOpalabra("pe pe ju-chu"))
+
+

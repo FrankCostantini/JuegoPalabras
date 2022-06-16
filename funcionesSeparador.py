@@ -1,4 +1,4 @@
-
+"""
 class char():
     def __init__(self):
         pass
@@ -87,4 +87,4 @@ def separador(palabra):
                 nueva=nueva+"-"
                 encontre=True
     return nueva[:-1]
-
+"""

@@ -12,6 +12,13 @@ from funcionesVACIAS import *
 
 #Funcion principal
 def main():
+#nivel BAjo :
+# tiempo 90
+# sume 3''
+#no te reste tiempo
+
+
+
 
         #Centrar la ventana y despues inicializar pygame
         os.environ["SDL_VIDEO_CENTERED"] = "1"
@@ -50,7 +57,7 @@ def main():
             totaltime += gameClock.get_time()
 
             if True:
-            	fps = 3
+                fps = 3
 
             #Buscar la tecla apretada del modulo de eventos de pygame
             for e in pygame.event.get():
@@ -67,6 +74,7 @@ def main():
                     if e.key == K_BACKSPACE:
                         palabra = palabra[0:len(palabra)-1]
                     if e.key == K_RETURN:
+
                         #pasa la palabra a silabas
                         palabraEnPantallaEnSilabas=palabraTOsilaba(palabraEnPantalla)
                         if esCorrecta(palabraEnPantallaEnSilabas, palabra):

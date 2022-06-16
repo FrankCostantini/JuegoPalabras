@@ -85,6 +85,7 @@ def dibujar(screen, palabraUsuario, palabraActual, puntos, segundos):
     screen.blit(ren, (10, 10))
 
     #muestra la palabra
+
     screen.blit(defaultFontGrande.render(palabraActual, 1, COLOR_LETRAS), (ANCHO//2-len(palabraActual)*TAMANNO_LETRA_GRANDE//4,ALTO-400))
 
 
