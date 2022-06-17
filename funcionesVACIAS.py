@@ -45,9 +45,7 @@ def palabraTOsilaba(palabra):
     a = pyphen.Pyphen(lang='es')
     var= a.inserted(palabra)
     return var
-#pe pe or pe-pe / true
-#pe-pe / donde hay un guion ponemos espacio /
-#palabra / pa-la-bra
+
 
 def cambioEspacio(palabra):
     pal = ""
@@ -81,6 +79,16 @@ def esCorrecta(palabraEnSilabasEnPantalla,palabra):
 def puntaje(palabraEnSilabas,palabra):
     if esCorrecta(palabraEnSilabas,palabra):
       return 5
+
+
+def cuentaSilabas(pal):
+    cont = 0
+    palabra=palabraTOsilaba(pal)
+    for i in range(len(palabra)) :
+        if palabra[i] == "-":
+            cont += 1
+    return cont
+
 
 
 

@@ -1,4 +1,4 @@
-"""
+
 class char():
     def __init__(self):
         pass
@@ -10,7 +10,7 @@ class char_line():
         self.type_line = ''.join(chartype for char, chartype in self.char_line)
 
     def char_type(self, char):
-        if char in set(['a', 'á', 'e', 'é','o', 'ó', 'u', 'ú']):
+        if char in set(['a', 'á', 'e', 'é','o', 'ó', 'ú']):
             return 'V' #strong vowel
         if char in set(['i', 'u']):
             return 'v' #week vowel
@@ -87,4 +87,4 @@ def separador(palabra):
                 nueva=nueva+"-"
                 encontre=True
     return nueva[:-1]
-"""
+

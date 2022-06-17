@@ -1,6 +1,7 @@
 #! /usr/bin/env python
-import os, random, sys, math
 
+import os, random, sys
+from niveles import *
 import pygame
 from pygame.locals import *
 from configuracion import *
@@ -10,15 +11,12 @@ from funcionesSeparador import *
 from funcionesVACIAS import *
 
 
+
 #Funcion principal
 def main():
-#nivel BAjo :
-# tiempo 90
-# sume 3''
-#no te reste tiempo
 
-
-
+        nivel = 2
+        TIEMPO_MAX = dificultadTiempo(nivel)
 
         #Centrar la ventana y despues inicializar pygame
         os.environ["SDL_VIDEO_CENTERED"] = "1"
@@ -45,11 +43,22 @@ def main():
         #lectura del diccionario
         lectura(archivo, listaPalabrasDiccionario)
 
+
         #elige una al azar
+        """
+        npal=nuevaPalabra(listaPalabrasDiccionario)
+
+        if cuentaSilabas(npal) <= 2 and nivel == 0:
+            palabraEnPantalla = nuevaPalabra(listaPalabrasDiccionario)
+        elif cuentaSilabas(npal) > 3 and cuentaSilabas(npal) <= 4 and nivel == 1:
+            palabraEnPantalla = nuevaPalabra(listaPalabrasDiccionario)
+        elif cuentaSilabas(npal) > 5 and nivel == 2:
+            palabraEnPantalla = nuevaPalabra(listaPalabrasDiccionario)
+        else:
+            palabraEnPantalla = nuevaPalabra(listaPalabrasDiccionario)
+    """
         palabraEnPantalla=nuevaPalabra(listaPalabrasDiccionario)
-##
-        palabraEnPantallaAnterior=""
-        dibujar(screen, palabra, palabraEnPantalla, puntos,segundos)
+        dibujar(screen,palabra,palabraEnPantalla, puntos,segundos)
 
         while segundos > fps/1000:
         # 1 frame cada 1/fps segundos
@@ -78,9 +87,18 @@ def main():
                         #pasa la palabra a silabas
                         palabraEnPantallaEnSilabas=palabraTOsilaba(palabraEnPantalla)
                         if esCorrecta(palabraEnPantallaEnSilabas, palabra):
-                            puntos += 5
+                            puntos+=5
+
+
+
                         else:
                             puntos-=1
+
+                        if nivel == valor(nivel) and esCorrecta(palabraEnPantallaEnSilabas, palabra):
+                            TIEMPO_MAX += adicional(nivel)
+                        else:
+                            TIEMPO_MAX -= descuento(nivel)
+
 
 
                         #elige una al azar
@@ -108,5 +126,7 @@ def main():
         archivo.close()
 #Programa Principal ejecuta Main
 if __name__ == "__main__":
+    TIEMPO_MAX=90
     main()
-    puntaje()
+
+
