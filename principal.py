@@ -7,15 +7,19 @@ from pygame.locals import *
 from configuracion import *
 from extras import *
 from funcionesSeparador import *
-
 from funcionesVACIAS import *
+import nivel2
+
+
+
+import niveles
 
 
 
 #Funcion principal
 def main():
+        nivel=0
 
-        nivel = 2
         TIEMPO_MAX = dificultadTiempo(nivel)
 
         #Centrar la ventana y despues inicializar pygame
@@ -38,7 +42,7 @@ def main():
         lemarioEnSilabas=[]
         listaPalabrasDiccionario=[]
 
-        archivo= open("lemario.txt","r")
+        archivo= open("lemario.txt", "r")
 
         #lectura del diccionario
         lectura(archivo, listaPalabrasDiccionario)
@@ -126,7 +130,6 @@ def main():
         archivo.close()
 #Programa Principal ejecuta Main
 if __name__ == "__main__":
-    TIEMPO_MAX=90
     main()
 
 

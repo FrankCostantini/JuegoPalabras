@@ -1,4 +1,6 @@
 from configuracion import *
+
+
 def valor(nivel):
     if nivel == 0:
         val = 0
