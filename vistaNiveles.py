@@ -1,3 +1,4 @@
+import menu
 from configuracion import *
 from pygame import *
 import sys
@@ -6,6 +7,7 @@ import pygame
 import principal
 import niveles
 import nivel2
+from funcionesVACIAS import *
 
 
 
@@ -14,7 +16,7 @@ def vistaNivels():
     pygame.init()
     ventana = pygame.display.set_mode((ANCHO,ALTO),0,32)
 
-    background2 = pygame.image.load("../static/background3.jpg").convert()
+    background2 = pygame.image.load("static/background3.jpg").convert()
     myfont = font.SysFont("Impact", 40)
     myfont2= font.SysFont("Impact",30)
     facil = Rect(100,250, 150, 80)
@@ -47,7 +49,7 @@ def vistaNivels():
                     principal.main()
             if event.type == MOUSEBUTTONDOWN and event.button == 1:
                 if redirectMenu.collidepoint(mouse.get_pos()):
-                    print("hola")
+                    menu.funcionMenu()
 
         #redirectMenu
 
@@ -57,7 +59,7 @@ def vistaNivels():
         else:
             draw.rect(ventana, (70, 189, 34), redirectMenu, 0)
         texto = myfont2.render("Menu", True, (255, 255, 255))
-        ventana.blit(texto, (640, 30))
+        ventana.blit(texto, (675, 40))
 
 
 

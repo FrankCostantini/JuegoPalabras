@@ -29,7 +29,7 @@ def nuevaPalabra(lista):
         relleno.append(lista[azar])
     else:
         azar = random.randint(0, len(lista))
-    return var
+    return "pepe"
 
 
 def silabasTOpalabra(silaba):

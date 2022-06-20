@@ -11,13 +11,13 @@ from funcionesVACIAS import *
 import nivel2
 
 
-
 import niveles
-
+import menu
 
 
 #Funcion principal
 def main():
+
         nivel=0
 
         TIEMPO_MAX = dificultadTiempo(nivel)
@@ -61,6 +61,7 @@ def main():
         else:
             palabraEnPantalla = nuevaPalabra(listaPalabrasDiccionario)
     """
+
         palabraEnPantalla=nuevaPalabra(listaPalabrasDiccionario)
         dibujar(screen,palabra,palabraEnPantalla, puntos,segundos)
 
@@ -102,7 +103,8 @@ def main():
                             TIEMPO_MAX += adicional(nivel)
                         else:
                             TIEMPO_MAX -= descuento(nivel)
-
+                        if TIEMPO_MAX < 80:
+                            pygame.mixer.music.play()
 
 
                         #elige una al azar
@@ -130,6 +132,6 @@ def main():
         archivo.close()
 #Programa Principal ejecuta Main
 if __name__ == "__main__":
-    main()
+    menu.funcionMenu()
 
 
