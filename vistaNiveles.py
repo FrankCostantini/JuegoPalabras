@@ -11,8 +11,8 @@ from funcionesVACIAS import *
 
 
 
-
 def vistaNivels():
+
     pygame.init()
     ventana = pygame.display.set_mode((ANCHO,ALTO),0,32)
 
@@ -39,13 +39,15 @@ def vistaNivels():
                 sys.exit()
             if event.type == MOUSEBUTTONDOWN and event.button == 1:
                 if facil.collidepoint(mouse.get_pos()):
-                    principal.main()
 
+                    principal.main()
             if event.type == MOUSEBUTTONDOWN and event.button == 1:
                 if medio.collidepoint(mouse.get_pos()):
+
                     principal.main()
             if event.type == MOUSEBUTTONDOWN and event.button == 1:
                 if dificil.collidepoint(mouse.get_pos()):
+
                     principal.main()
             if event.type == MOUSEBUTTONDOWN and event.button == 1:
                 if redirectMenu.collidepoint(mouse.get_pos()):

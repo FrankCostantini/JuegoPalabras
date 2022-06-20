@@ -1,16 +1,19 @@
-from configuracion import *
+
 from pygame import *
 import sys
 from pygame.locals import *
 import pygame
-import vistaNiveles
+from vistaNiveles import *
 import informacion
+from funcionesVACIAS import *
+from extras import *
+from configuracion import *
 
 
 def funcionMenu():
 
     pygame.init()
-    ventana = pygame.display.set_mode((ANCHO, ALTO), 0, 32)
+    ventana = pygame.display.set_mode((800,600), 0, 32)
     background = pygame.image.load("static/action.png").convert()
 
     miFuente = pygame.font.Font(None, 100)
@@ -42,7 +45,7 @@ def funcionMenu():
                 sys.exit()
             if event.type == MOUSEBUTTONDOWN and event.button == 1:
                 if jugar.collidepoint(mouse.get_pos()):
-                    vistaNiveles.vistaNivels()
+                    vistaNivels()
             if event.type == MOUSEBUTTONDOWN and event.button == 1:
                 if about.collidepoint(mouse.get_pos()):
                     informacion.about()

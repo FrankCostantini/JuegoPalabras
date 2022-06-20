@@ -6,6 +6,9 @@ import math
 
 LONG_MIN=4
 
+
+
+
 def dlenter(linea):
     linea2=""
     for i in range(len(linea)-1):
@@ -29,7 +32,7 @@ def nuevaPalabra(lista):
         relleno.append(lista[azar])
     else:
         azar = random.randint(0, len(lista))
-    return "pepe"
+    return var
 
 
 def silabasTOpalabra(silaba):
