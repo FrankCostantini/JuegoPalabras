@@ -8,6 +8,7 @@ import principal
 import niveles
 import nivel2
 from funcionesVACIAS import *
+from __main__ import *
 
 
 
@@ -33,22 +34,19 @@ def vistaNivels():
             keys = pygame.key.get_pressed()
             if event.type == pygame.QUIT:
                 pygame.quit()
-
             if (keys[pygame.K_ESCAPE]):
                 pygame.quit()
                 sys.exit()
             if event.type == MOUSEBUTTONDOWN and event.button == 1:
                 if facil.collidepoint(mouse.get_pos()):
-
-                    principal.main()
+                    principal.main(0)
             if event.type == MOUSEBUTTONDOWN and event.button == 1:
                 if medio.collidepoint(mouse.get_pos()):
 
-                    principal.main()
+                    principal.main(1)
             if event.type == MOUSEBUTTONDOWN and event.button == 1:
                 if dificil.collidepoint(mouse.get_pos()):
-
-                    principal.main()
+                    principal.main(2)
             if event.type == MOUSEBUTTONDOWN and event.button == 1:
                 if redirectMenu.collidepoint(mouse.get_pos()):
                     menu.funcionMenu()

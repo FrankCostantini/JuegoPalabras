@@ -66,6 +66,8 @@ def dameLetraApretada(key):
 
 
 def dibujar(screen, palabraUsuario, palabraActual, puntos, segundos):
+    segundos= segundos +3
+    pygame.mixer.music.load("song/DancingPumpkins.mp4")
 
     defaultFont= pygame.font.Font( pygame.font.get_default_font(), TAMANNO_LETRA)
     defaultFontGrande= pygame.font.Font( pygame.font.get_default_font(), TAMANNO_LETRA_GRANDE)
@@ -80,8 +82,10 @@ def dibujar(screen, palabraUsuario, palabraActual, puntos, segundos):
     #muestra los segundos y puede cambiar de color con el tiempo
     if(segundos<15):
         ren = defaultFont.render("Tiempo: " + str(int(segundos)), 1, COLOR_TIEMPO_FINAL)
+        pygame.mixer.music.play()
     else:
         ren = defaultFont.render("Tiempo: " + str(int(segundos)), 1, COLOR_TEXTO)
+
     screen.blit(ren, (10, 10))
 
     #muestra la palabra

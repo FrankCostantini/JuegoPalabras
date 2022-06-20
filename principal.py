@@ -15,8 +15,8 @@ from menu import *
 
 
 #Funcion principal
-def main():
-        nivel=NIVEL
+def main(num):
+        nivel= num
         print(nivel)
         TIEMPO_MAX = dificultadTiempo(nivel)
 
@@ -131,6 +131,7 @@ def main():
         archivo.close()
 #Programa Principal ejecuta Main
 if __name__ == "__main__":
+    Vivel = 0
     funcionMenu()
 
 
