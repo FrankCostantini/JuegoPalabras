@@ -17,7 +17,7 @@ def vistaNivels():
     pygame.init()
     ventana = pygame.display.set_mode((ANCHO,ALTO),0,32)
 
-    background2 = pygame.image.load("static/background3.jpg").convert()
+    background2 = pygame.image.load("static/background3.png").convert()
     myfont = font.SysFont("Impact", 40)
     myfont2= font.SysFont("Impact",30)
     facil = Rect(100,250, 150, 80)
@@ -42,7 +42,6 @@ def vistaNivels():
                     principal.main(0)
             if event.type == MOUSEBUTTONDOWN and event.button == 1:
                 if medio.collidepoint(mouse.get_pos()):
-
                     principal.main(1)
             if event.type == MOUSEBUTTONDOWN and event.button == 1:
                 if dificil.collidepoint(mouse.get_pos()):
@@ -57,7 +56,7 @@ def vistaNivels():
 
             draw.rect(ventana, (186, 189, 162), redirectMenu, 0)
         else:
-            draw.rect(ventana, (70, 189, 34), redirectMenu, 0)
+            draw.rect(ventana,(6, 3, 97), redirectMenu, 0)
         texto = myfont2.render("Menu", True, (255, 255, 255))
         ventana.blit(texto, (675, 40))
 
@@ -70,7 +69,7 @@ def vistaNivels():
 
             draw.rect(ventana, (186, 189, 162), facil, 0)
         else:
-            draw.rect(ventana, (70, 189, 34), facil, 0)
+            draw.rect(ventana, (161, 8, 8), facil, 0)
         texto = myfont.render("Facil", True, (255, 255, 255))
         ventana.blit(texto, (130,265))
 
@@ -79,7 +78,7 @@ def vistaNivels():
 
             draw.rect(ventana, (186, 189, 162),medio, 0)
         else:
-            draw.rect(ventana, (70, 189, 34),medio, 0)
+            draw.rect(ventana,(161, 8, 8),medio, 0)
         texto = myfont.render("Medio", True, (255, 255, 255))
         ventana.blit(texto, (374, 265))
 
@@ -88,7 +87,7 @@ def vistaNivels():
 
             draw.rect(ventana, (186, 189, 162),dificil, 0)
         else:
-            draw.rect(ventana, (70, 189, 34),dificil, 0)
+            draw.rect(ventana,(161, 8, 8),dificil, 0)
         texto = myfont.render("Dificil", True, (255, 255, 255))
         ventana.blit(texto, (628,265))
 

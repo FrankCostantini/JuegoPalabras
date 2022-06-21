@@ -34,7 +34,7 @@ def about():
 
             draw.rect(ventana, (186, 189, 162), redirectMenu, 0)
         else:
-            draw.rect(ventana, (70, 189, 34), redirectMenu, 0)
+            draw.rect(ventana,(6, 3, 97), redirectMenu, 0)
         texto = myfont2.render("Menu", True, (255, 255, 255))
         ventana.blit(texto, (675,40))
 

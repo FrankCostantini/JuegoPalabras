@@ -8,10 +8,12 @@ import informacion
 from funcionesVACIAS import *
 from extras import *
 from configuracion import *
+import time
+
 
 
 def funcionMenu():
-
+    tiempoMenu = 0
     pygame.init()
     ventana = pygame.display.set_mode((800,600), 0, 32)
     background = pygame.image.load("static/action.png").convert()
@@ -24,13 +26,15 @@ def funcionMenu():
     # boton de quit
     myfont = font.SysFont("Impact", 40)
 
-    pygame.mixer.music.load("song/Sonido.mp4")
+    nombre = pygame.mixer.music.load("song/Sonido.mp4")
     pygame.mixer.music.play()
+
     jugar = Rect(133, 175, 150, 50)
     about = Rect(100, 278, 220, 50)
     salir = Rect(133, 378, 150, 50)
 
     while True:
+        start = time.time()
         ventana.blit(background, [0, 0])
         #ventana.blit(titulo, (0, 0))
 
@@ -80,6 +84,9 @@ def funcionMenu():
         ventana.blit(texto, (170, 375))
 
         pygame.display.flip()
+        end = time.time()
+    tiempoMenu = (end - start)
+
 
 
 

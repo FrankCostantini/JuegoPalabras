@@ -1,6 +1,8 @@
 #! /usr/bin/env python
-
+import time
 import os, random, sys
+
+import menu
 from niveles import *
 import pygame
 import pyphen
@@ -12,12 +14,19 @@ from niveles import *
 from funcionesVACIAS import *
 import niveles
 from menu import *
+import time
 
 
 #Funcion principal
+
 def main(num):
+        pygame.mixer.quit()
+
+
+        myfont2 = font.SysFont("Impact", 40)
+        redirectMenu = Rect(670, 40, 80, 40)
         nivel= num
-        print(nivel)
+
         TIEMPO_MAX = dificultadTiempo(nivel)
 
         #Centrar la ventana y despues inicializar pygame
@@ -61,13 +70,20 @@ def main(num):
     """
 
         palabraEnPantalla=nuevaPalabra(listaPalabrasDiccionario)
-        print(segundos)
+
+
         dibujar(screen,palabra,palabraEnPantalla, puntos,segundos)
 
         while segundos > fps/1000:
+            draw.rect(screen, (186, 189, 162), redirectMenu, 10)
+
+            texto = myfont2.render("Menu", True, (255, 255, 255))
+            screen.blit(texto, (675, 40))
+
         # 1 frame cada 1/fps segundos
             gameClock.tick(fps)
             totaltime += gameClock.get_time()
+
 
             if True:
                 fps = 3
@@ -93,8 +109,6 @@ def main(num):
                         if esCorrecta(palabraEnPantallaEnSilabas, palabra):
                             puntos+=5
 
-
-
                         else:
                             puntos-=1
 
@@ -102,8 +116,7 @@ def main(num):
                             TIEMPO_MAX += adicional(nivel)
                         else:
                             TIEMPO_MAX -= descuento(nivel)
-                        if TIEMPO_MAX < 80:
-                            pygame.mixer.music.play()
+
 
 
                         #elige una al azar
@@ -111,7 +124,8 @@ def main(num):
 
                         palabra = ""
 
-            segundos = TIEMPO_MAX - pygame.time.get_ticks()/1000
+            segundos = (TIEMPO_MAX - pygame.time.get_ticks() / 1000)
+
 
             #Limpiar pantalla anterior
             screen.fill(COLOR_FONDO)
@@ -126,12 +140,13 @@ def main(num):
             for e in pygame.event.get():
                 if e.type == QUIT:
                     pygame.quit()
-                    return
+                if e.type == MOUSEBUTTONDOWN and e.button == 1:
+                    if redirectMenu.collidepoint(mouse.get_pos()):
+                        menu.funcionMenu()
 
         archivo.close()
 #Programa Principal ejecuta Main
 if __name__ == "__main__":
-    Vivel = 0
     funcionMenu()
 
 

@@ -12,11 +12,11 @@ def valor(nivel):
 
 def dificultadTiempo(nivel):
     if nivel == 0:
-        TIEMPO_MAX = 91
+        TIEMPO_MAX = 93
     elif nivel == 1:
-        TIEMPO_MAX = 61
+        TIEMPO_MAX = 63
     elif nivel == 2:
-        TIEMPO_MAX = 41
+        TIEMPO_MAX = 6
     return TIEMPO_MAX
 
 def adicional(nivel):
