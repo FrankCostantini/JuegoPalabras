@@ -79,14 +79,12 @@ def dibujar(screen, palabraUsuario, palabraActual, puntos, segundos):
     screen.blit(defaultFont.render("Puntos: " + str(puntos), 1, COLOR_TEXTO), (680, 10))
     #muestra los segundos y puede cambiar de color con el tiempo
 
-    if(segundos<15):
+    if segundos<15:
         ren = defaultFont.render("Tiempo: " + str(int(segundos)), 1, COLOR_TIEMPO_FINAL)
-
     else:
         ren = defaultFont.render("Tiempo: " + str(int(segundos)), 1, COLOR_TEXTO)
-    if segundos==0:
-        if segundos == 0:
-            funcionMenu()
+
+
     screen.blit(ren, (10, 10))
 
     #muestra la palabra

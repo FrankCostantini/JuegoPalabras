@@ -9,12 +9,13 @@ import niveles
 import nivel2
 from funcionesVACIAS import *
 from __main__ import *
+import time
+global tiempo2
 
-
-
-def vistaNivels():
+def vistaNivels(tiempoMenu):
 
     pygame.init()
+    inicio=time.time()
     ventana = pygame.display.set_mode((ANCHO,ALTO),0,32)
 
     background2 = pygame.image.load("static/background3.png").convert()
@@ -39,13 +40,19 @@ def vistaNivels():
                 sys.exit()
             if event.type == MOUSEBUTTONDOWN and event.button == 1:
                 if facil.collidepoint(mouse.get_pos()):
-                    principal.main(0)
+                    final= time.time()
+                    tiempo2=round(final-inicio)
+                    principal.main(0,tiempoMenu,tiempo2)
             if event.type == MOUSEBUTTONDOWN and event.button == 1:
                 if medio.collidepoint(mouse.get_pos()):
-                    principal.main(1)
+                    final = time.time()
+                    tiempo2 = round(final - inicio)
+                    principal.main(1, tiempoMenu, tiempo2)
             if event.type == MOUSEBUTTONDOWN and event.button == 1:
                 if dificil.collidepoint(mouse.get_pos()):
-                    principal.main(2)
+                    final = time.time()
+                    tiempo2 = round(final - inicio)
+                    principal.main(2, tiempoMenu, tiempo2)
             if event.type == MOUSEBUTTONDOWN and event.button == 1:
                 if redirectMenu.collidepoint(mouse.get_pos()):
                     menu.funcionMenu()

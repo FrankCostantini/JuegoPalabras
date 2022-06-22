@@ -14,15 +14,17 @@ from niveles import *
 from funcionesVACIAS import *
 import niveles
 from menu import *
-import time
+
+
 
 
 #Funcion principal
 
-def main(num):
-        pygame.mixer.quit()
+def main(num,tiempo,tiempo2):
 
-
+        pygame.mixer.stop()
+        pygame.mixer.music.load("song/Blues.mp4")
+        pygame.mixer.music.play()
         myfont2 = font.SysFont("Impact", 40)
         redirectMenu = Rect(670, 40, 80, 40)
         nivel= num
@@ -75,10 +77,8 @@ def main(num):
         dibujar(screen,palabra,palabraEnPantalla, puntos,segundos)
 
         while segundos > fps/1000:
-            draw.rect(screen, (186, 189, 162), redirectMenu, 10)
 
-            texto = myfont2.render("Menu", True, (255, 255, 255))
-            screen.blit(texto, (675, 40))
+
 
         # 1 frame cada 1/fps segundos
             gameClock.tick(fps)
@@ -90,6 +90,10 @@ def main(num):
 
             #Buscar la tecla apretada del modulo de eventos de pygame
             for e in pygame.event.get():
+                draw.rect(screen, (186, 189, 162), redirectMenu, 10)
+
+                texto = myfont2.render("Menu", True, (255, 255, 255))
+                screen.blit(texto, (675, 40))
 
                 #QUIT es apretar la X en la ventana
                 if e.type == QUIT:
@@ -124,7 +128,9 @@ def main(num):
 
                         palabra = ""
 
-            segundos = (TIEMPO_MAX - pygame.time.get_ticks() / 1000)
+            timer=(tiempo+tiempo2)
+
+            segundos = (TIEMPO_MAX - pygame.time.get_ticks() / 1000)+timer
 
 
             #Limpiar pantalla anterior

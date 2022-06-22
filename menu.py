@@ -11,10 +11,15 @@ from configuracion import *
 import time
 
 
+global tiempo
+
+
+
 
 def funcionMenu():
-    tiempoMenu = 0
+
     pygame.init()
+    inicio = time.time()
     ventana = pygame.display.set_mode((800,600), 0, 32)
     background = pygame.image.load("static/action.png").convert()
 
@@ -26,15 +31,15 @@ def funcionMenu():
     # boton de quit
     myfont = font.SysFont("Impact", 40)
 
-    nombre = pygame.mixer.music.load("song/Sonido.mp4")
-    pygame.mixer.music.play()
+    nombre = pygame.mixer.music.load("song/musicaBack.mp3")
+    pygame.mixer.music.play(4)
 
     jugar = Rect(133, 175, 150, 50)
     about = Rect(100, 278, 220, 50)
     salir = Rect(133, 378, 150, 50)
 
     while True:
-        start = time.time()
+
         ventana.blit(background, [0, 0])
         #ventana.blit(titulo, (0, 0))
 
@@ -49,7 +54,10 @@ def funcionMenu():
                 sys.exit()
             if event.type == MOUSEBUTTONDOWN and event.button == 1:
                 if jugar.collidepoint(mouse.get_pos()):
-                    vistaNivels()
+                    final= time.time()
+                    tiempo = round(final - inicio, 0)
+                    vistaNivels(tiempo)
+
             if event.type == MOUSEBUTTONDOWN and event.button == 1:
                 if about.collidepoint(mouse.get_pos()):
                     informacion.about()
@@ -83,9 +91,10 @@ def funcionMenu():
         texto = myfont.render("Salir", True, (255, 255, 255))
         ventana.blit(texto, (170, 375))
 
+
         pygame.display.flip()
-        end = time.time()
-    tiempoMenu = (end - start)
+
+
 
 
 

@@ -27,7 +27,7 @@ def nuevaPalabra(lista):
     relleno = []
     var = ""
     azar = random.randint(0, len(lista))
-    if lista[azar] not in relleno:
+    if lista[azar] not in relleno and  len(lista[azar]):
         var = lista[azar]
         relleno.append(lista[azar])
     else:
@@ -60,28 +60,16 @@ def cambioEspacio(palabra):
     return pal
 
 
-def cambioguion(palabra):
-    pal = ""
-    for i in range(len(palabra)):
-        if palabra[i] != " ":
-            pal += palabra[i]
-        elif palabra[i] == " ":
-            pal += "-"
-    return pal
-
 
 
 def esCorrecta(palabraEnSilabasEnPantalla,palabra):
     palabraGuion=palabraEnSilabasEnPantalla
     palabraEspacio=cambioEspacio(palabraEnSilabasEnPantalla)
-    if palabra ==palabraGuion or palabra==palabraEspacio and len(palabra) > LONG_MIN:
+    if palabra ==palabraGuion or palabra==palabraEspacio :
         return True
     else:
         return False
 
-def puntaje(palabraEnSilabas,palabra):
-    if esCorrecta(palabraEnSilabas,palabra):
-      return 5
 
 
 def cuentaSilabas(pal):

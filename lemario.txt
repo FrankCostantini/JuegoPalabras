@@ -73326,7 +73326,6 @@ tamizar
 tamo
 tamojal
 tamojo
-tampique�o
 tampoco
 tampon
 tamtan
@@ -73495,7 +73494,6 @@ taquin
 tara
 tarabilla
 tarabita
-tarabuque�o
 taracea
 taraceador
 taracear
@@ -73520,7 +73518,6 @@ tarantela
 tarantera
 tarantulado
 tarantin
-tarapaque�o
 tarar
 tarara
 tararaco
@@ -73536,7 +73533,6 @@ tarascar
 tarasco
 tarascon
 tarasi
-tarate�o
 taratantara
 taray
 tarayal
@@ -73572,9 +73568,7 @@ tarida
 tarifa
 tarifacion
 tarifar
-tarife�o
 tarificar
-tarije�o
 tarima
 tarimon
 tarina
@@ -73604,8 +73598,6 @@ tarrascar
 tarrasense
 tarraya
 tarraza
-tarra�uela
-tarre�a
 tarrico
 tarrina
 tarriza
@@ -73718,7 +73710,6 @@ taxodiaceo
 taxonomista
 taxonomia
 taxonomico
-taxque�o
 taxaceo
 taximetro
 taxon
@@ -73729,17 +73720,10 @@ tayuya
 taz
 taza
 tazar
-taza�a
 tazmia
 tazon
 taina
 taino
-ta�ar
-ta�edor
-ta�er
-ta�ido
-ta�imiento
-ta�o
 tauca
 te
 tea
@@ -73772,7 +73756,6 @@ tecle
 tecleado
 teclear
 tecleo
-tecle�o
 teclista
 tecnecio
 tecnicidad
@@ -73844,8 +73827,6 @@ tejon
 tela
 telamon
 telar
-telara�a
-telara�oso
 tele
 teleadicto
 telecabina
@@ -80368,9 +80349,6 @@ zutujil
 zuzar
 zuzo
 zuzon
-zu�ido
-zu�ir
-zu�o
 zabila
 zalamo
 zambigo
