@@ -61,8 +61,11 @@ def dameLetraApretada(key):
         return("-")
     elif key == K_SPACE:
        return(" ")
+    elif key == K_MINUS:
+        return ("-")
     else:
         return("")
+
 
 
 def dibujar(screen, palabraUsuario, palabraActual, puntos, segundos):

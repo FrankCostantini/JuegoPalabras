@@ -6,7 +6,7 @@ from pygame.locals import *
 import pygame
 import principal
 import niveles
-import nivel2
+
 from funcionesVACIAS import *
 from __main__ import *
 import time
